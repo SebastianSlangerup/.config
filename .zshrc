@@ -1,3 +1,29 @@
+autoload -Uz vcs_info
+zstyle ':vcs_info:git:*' formats '%b'
+setopt PROMPT_SUBST
+
+# Customizing the prompt
+autoload -Uz colors && colors
+precmd() {
+    vcs_info
+    # If there is no git branch, hide the parenthesis and the git branch message
+    if [[ -z ${vcs_info_msg_0_} ]]; then
+        PROMPT='%n %1~ %{$reset_color%}%% '
+    else
+        PROMPT='%n %1~ (${vcs_info_msg_0_}) %{$reset_color%}%% '
+    fi
+}
+setopt autocd		# Automatically cd into typed directory.
+stty stop undef		# Disable ctrl-s to freeze terminal.
+
+# Basic auto/tab complete:
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)
+
 alias vim='nvim'
 alias ll='ls -all'
 alias ls='ls --color'
