@@ -13,7 +13,10 @@
 
 
 ;; Uncomment if you want faster autocompletions
-;; (setq company-idle-delay 0.05)
+(setq company-idle-delay 0.05)
+;; Display company childframes faster
+;;(after! company-box
+;;  (setq company-box-doc-delay 0))
 
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
