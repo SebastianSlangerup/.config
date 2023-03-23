@@ -8,9 +8,9 @@ precmd() {
     vcs_info
     # If there is no git branch, hide the parenthesis and the git branch message
     if [[ -z ${vcs_info_msg_0_} ]]; then
-        PROMPT='%n %1~ %{$reset_color%}%% '
+        PROMPT='%{$fg[blue]%}%1~ %{$reset_color%}%% '
     else
-        PROMPT='%n %1~ (${vcs_info_msg_0_}) %{$reset_color%}%% '
+        PROMPT='%{$fg[blue]%}%1~ %{$fg[red]%}(${vcs_info_msg_0_}) %{$reset_color%}%% '
     fi
 }
 setopt autocd		# Automatically cd into typed directory.
