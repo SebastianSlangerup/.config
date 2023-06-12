@@ -27,8 +27,8 @@ _comp_options+=(globdots)
 # END CUSTOM PROMPT
 
 alias vim='nvim'
-alias ll='ls -all'
-alias ls='ls --color'
+alias ll='exa -al'
+alias ls='exa'
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias pint='./vendor/bin/pint'
 alias artisan='php artisan'

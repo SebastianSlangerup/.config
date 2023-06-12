@@ -41,7 +41,7 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "Iosevka" :size 16 :weight 'normal)
+(setq doom-font (font-spec :family "Iosevka Comfy" :size 16 :weight 'normal)
       doom-variable-pitch-font (font-spec :family "Iosevka Aile" :size 16 :weight 'normal))
 
 ;; If you use `org' and don't want your org files in the default location below,
